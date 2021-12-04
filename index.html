@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- FONTAWESOME CDN -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./style.css" />
+        <title>Clock</title>
+    </head>
+    <body>
+        <section class="clock container">
+            <div class="clock__wrapper grid">
+                <div class="clock__content grid">
+                    <div class="clock__circle">
+                        <span class="clock__twelve"></span>
+                        <span class="clock__three"></span>
+                        <span class="clock__six"></span>
+                        <span class="clock__nine"></span>
+
+                        <div class="clock__rounder"></div>
+                        <div class="clock__hour" id="clockHour"></div>
+                        <div class="clock__minutes" id="clockMinutes"></div>
+                        <div class="clock__seconds" id="clockSeconds"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- JAVASCRIPT -->
+        <script src="./script.js"></script>
+    </body>
+</html>
