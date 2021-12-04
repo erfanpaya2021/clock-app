@@ -77,3 +77,36 @@ const clockText = () => {
 };
 
 setInterval(clockText, 1000);
+
+// DARK THEME
+const clockTheme = document.getElementById("clockTheme"),
+    icon = clockTheme.firstElementChild,
+    body = document.body,
+    moon = "fas fa-moon",
+    sun = "fas fa-sun";
+
+let currentTheme = localStorage.getItem("theme") || "dark";
+
+if (currentTheme === "dark") {
+    body.classList.add("dark");
+    icon.className = sun;
+} else {
+    body.classList.remove("dark");
+    icon.className = moon;
+}
+
+clockTheme.addEventListener("click", (e) => {
+    if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        icon.className = moon;
+
+        localStorage.setItem('theme', 'light')
+        currentTheme = localStorage.getItem('theme')
+    } else {
+        body.classList.add("dark");
+        icon.className = sun;
+
+        localStorage.setItem('theme', 'dark')
+        currentTheme = localStorage.getItem('theme')
+    }
+});

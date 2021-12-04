@@ -3,7 +3,7 @@
 /* VARIBALES */
 :root {
     /* COLOR */
-    --hueColor: 240;
+    --hueColor: 250;
 
     --primaryColor: hsl(var(--hueColor), 50%, 50%);
     --titleColor: hsl(var(--hueColor), 50%, 15%);
@@ -33,6 +33,27 @@
     --zNormal: 1;
     --zTooltip: 10;
 }
+
+/* DARK THEME VARIABLES */
+body.dark {
+    --titleColor: hsl(var(--hueColor), 12%, 95%);
+    --textColor: hsl(var(--hueColor), 12%, 75%);
+    --bodyColor: hsl(var(--hueColor), 10%, 16%);
+}
+
+body.dark .clock__circle {
+    box-shadow: 0.6rem 0.6rem 1.6rem hsla(var(--hueColor), 8%, 12%, 1),
+        -0.6rem -0.6rem 1.6rem hsla(var(--hueColor), 8%, 20%, 1),
+        inset 0.6rem 0.6rem 1.6rem hsla(var(--hueColor), 8%, 12%, 1),
+        inset -0.6rem -0.6rem 1.6rem hsla(var(--hueColor), 8%, 20%, 1);
+}
+
+body.dark .clock__theme {
+    box-shadow: inset -1px -1px 1px hsla(var(--hueColor), 8%, 20%, 1),
+        inset 1px 1px 1px hsla(var(--hueColor), 8%, 12%, 1);
+}
+
+/* Box Shadows */
 
 @media screen and (min-width: 968px) {
     :root {
@@ -153,7 +174,6 @@ body {
 .clock__hour {
     width: 10.5rem;
     height: 10.5rem;
-    transform: rotateZ(90deg);
 }
 
 .clock__hour::before {
@@ -169,7 +189,6 @@ body {
 .clock__minutes {
     width: 13.6rem;
     height: 13.6rem;
-    transform: rotateZ(36deg);
 }
 
 .clock__minutes::before {
@@ -185,7 +204,6 @@ body {
 .clock__seconds {
     width: 13rem;
     height: 13rem;
-    transform: rotateZ(-40deg);
 }
 
 .clock__seconds::before {
@@ -222,4 +240,25 @@ body {
     text-align: center;
     font-size: var(--mdFontSize);
     font-weight: var(--fontMedium);
+}
+
+/* dark/light theme button */
+.clock__theme {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: inset -1px -1px 1px hsla(var(--hueColor), 0%, 100%, 1),
+        inset 1px 1px 1px hsla(var(--hueColor), 30%, 86%, 1);
+    color: var(--primaryColor);
+    cursor: pointer;
+}
+
+/* Media queries */
+@media (min-width: 968px) {
+    .container {
+        margin: auto;
+    }
 }
