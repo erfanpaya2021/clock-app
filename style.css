@@ -9,12 +9,12 @@
     --titleColor: hsl(var(--hueColor), 50%, 15%);
     --textColor: hsl(var(--hueColor), 12%, 40%);
     --lightenTextColor: hsl(var(--hueColor), 12%, 65%);
-    --bodyColor: hsl(var(--hueColor), 25%, 90%);
+    --bodyColor: hsl(var(--hueColor), 25%, 95%);
     --whiteColor: #fff;
 
     /* FONT AND TYPOGRAPHY */
     --bodyFont: "Poppins", sans-serif;
-    --biggestFontSize: 4rem;
+    --biggestFontSize: 4.8rem;
     --mdFontSize: 1.3rem;
     --smFontSize: 1.2rem;
     --vsmFontSize: 1rem;
@@ -36,10 +36,10 @@
 
 @media screen and (min-width: 968px) {
     :root {
-        --biggest-font-size: 5rem;
-        --small-font-size: 1.4rem;
-        --smaller-font-size: 1.3rem;
-        --tiny-font-size: 1.2rem;
+        --biggestFontSize: 5.6rem;
+        --mdFontSize: 1.4rem;
+        --smFontSize: 1.3rem;
+        --vsmFontSize: 1.2rem;
     }
 }
 
@@ -63,8 +63,7 @@ body {
 /* REUSABLE CSS CLASSES */
 .container {
     max-width: 968px;
-    margin-right: var(--unit-1);
-    margin-left: var(--unit-1);
+    margin: 0 var(--unit-1);
 }
 
 .grid {
@@ -80,6 +79,7 @@ body {
 .clock__content {
     align-self: center;
     row-gap: 3.5rem;
+    margin-bottom: 6rem;
 }
 
 .clock__circle {
@@ -95,6 +95,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: var(--unit-3);
 }
 
 .clock__twelve,
@@ -102,7 +103,7 @@ body {
 .clock__six,
 .clock__nine {
     position: absolute;
-    width: 2rem;
+    width: 1.6rem;
     height: 0.1rem;
     background-color: var(--lightenTextColor);
 }
@@ -176,7 +177,7 @@ body {
     position: absolute;
     background-color: var(--textColor);
     width: 0.3rem;
-    height: 6.3rem;
+    height: 6.4rem;
     border-radius: 1rem;
     z-index: var(--zNormal);
 }
@@ -195,4 +196,30 @@ body {
     height: 8rem;
     border-radius: 1rem;
     z-index: var(--zNormal);
+}
+
+/* CLOCK TEXT */
+.clock__text {
+    display: flex;
+    justify-content: center;
+}
+
+.clock__hour-text,
+.clock__minutes-text {
+    font-size: var(--biggestFontSize);
+    font-weight: var(--fontMedium);
+    color: var(--titleColor);
+}
+
+.clock__ampm {
+    font-size: var(--vsmFontSize);
+    font-weight: var(--fontMedium);
+    color: var(--titleColor);
+    margin-left: var(--unit-0-5);
+}
+
+.clock__date {
+    text-align: center;
+    font-size: var(--mdFontSize);
+    font-weight: var(--fontMedium);
 }
